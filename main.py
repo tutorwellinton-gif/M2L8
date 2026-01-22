@@ -75,7 +75,9 @@ def reg():
 @app.route('/index')
 def index():
     # Atividade #4. Mostrar apenas os cards do usuário logado
-    
+    email = session.get('user_email')
+    cards = Card.query.filter_by(user_email=email).all()
+
     return render_template('index.html', cards=cards)
 
 
