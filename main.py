@@ -108,6 +108,8 @@ def form_create():
         
         # Atividade #4. Criar card em nome do usuário logado
         
+        db.session.add(card)
+        db.session.commit()
         return redirect('/index')
 
     return render_template('create_card.html')
@@ -115,3 +117,4 @@ def form_create():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
